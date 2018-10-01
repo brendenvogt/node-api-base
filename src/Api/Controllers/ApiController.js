@@ -1,3 +1,3 @@
 exports.getApi = function (req, res) {
-    res.send("success");
+    res.json({ "response": true });
 };

@@ -1,11 +1,10 @@
 var mongoose = require('mongoose'),
-    User = mongoose.model('User');
+    UserEntity = mongoose.model('User');
 
-var UserRequestModel = require('../contracts/UserRequestModel');
-var UserResponseModel = require('../contracts/UserResponseModel');
+var UserResponseContract = require('../Contracts/UserContract');
 
 exports.getUsers = function (req, res) {
-    User.find({}, function (err, task) {
+    UserEntity.find({}, function (err, task) {
         console.log("getting users");
         if (err)
             res.send(err);
@@ -14,17 +13,17 @@ exports.getUsers = function (req, res) {
 };
 
 exports.getUser = function (req, res) {
-    User.findOne({ username: req.params.username }, function (err, user) {
+    UserEntity.findOne({ username: req.params.username }, function (err, user) {
         console.log(`getting ${user}`);
         if (err)
             res.send(err);
-        var newUser = new UserResponseModel(user.username);
+        var newUser = new UserResponseContract(user.username);
         res.json(newUser);
     });
 };
 
 exports.postUser = function (req, res) {
-    var newUser = new User(req.body);
+    var newUser = new UserEntity(req.body);
     newUser.save(function (err, user) {
         console.log(`posting ${user}`);
         if (err)
@@ -34,7 +33,7 @@ exports.postUser = function (req, res) {
 };
 
 exports.putUser = function (req, res) {
-    User.findOneAndUpdate({ username: req.params.username }, req.body, { new: false }, function (err, user) {
+    UserEntity.findOneAndUpdate({ username: req.params.username }, req.body, { new: false }, function (err, user) {
         console.log(`putting ${user}`);
         if (err)
             res.send(err);
@@ -43,7 +42,7 @@ exports.putUser = function (req, res) {
 };
 
 exports.patchUser = function (req, res) {
-    User.findOneAndUpdate({ username: req.params.username }, req.body, { new: false }, function (err, user) {
+    UserEntity.findOneAndUpdate({ username: req.params.username }, req.body, { new: false }, function (err, user) {
         console.log(`patching ${user}`);
         if (err)
             res.send(err);
@@ -52,7 +51,7 @@ exports.patchUser = function (req, res) {
 };
 
 exports.deleteUser = function (req, res) {
-    User.deleteOne({
+    UserEntity.deleteOne({
         username: req.params.username
     }, function (err, user) {
         console.log(`deleting ${user}`);

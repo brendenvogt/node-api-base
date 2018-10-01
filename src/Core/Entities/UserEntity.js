@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var UserSchema = new Schema({
+var UserEntity = new Schema({
     username: {
         type: String,
     },
@@ -12,4 +12,4 @@ var UserSchema = new Schema({
     // password not for production use 
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User', UserEntity);

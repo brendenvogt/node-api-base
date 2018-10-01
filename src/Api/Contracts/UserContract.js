@@ -1,7 +1,6 @@
-class UserResponseModel {
+class UserContract {
     constructor(username) {
         this.username = username;
     }
 }
-
-module.exports = UserResponseModel;
+module.exports = UserContract;
