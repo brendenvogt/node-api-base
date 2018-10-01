@@ -4,6 +4,8 @@ var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser');
 
+var User = require('./src/Core/Entities/User');
+
 // mongodb
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/node-api-base', { useNewUrlParser: true });
