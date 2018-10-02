@@ -16,4 +16,4 @@ function refresh(req: any, res: any) {
     console.log("refresh token")
 };
 
-module.exports = router;
+export = router;

@@ -70,4 +70,4 @@ function deleteUser(req: any, res: any) {
     });
 };
 
-module.exports = router;
+export = router;

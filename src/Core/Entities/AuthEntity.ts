@@ -12,4 +12,4 @@ var AuthEntity = new Schema({
     //todo add timestamp
 });
 
-module.exports = mongoose.model('Auth', AuthEntity);
+export = mongoose.model('Auth', AuthEntity);

@@ -12,4 +12,4 @@ var UserEntity = new Schema({
     // password not for production use 
 });
 
-module.exports = mongoose.model('User', UserEntity);
+export = mongoose.model('User', UserEntity);

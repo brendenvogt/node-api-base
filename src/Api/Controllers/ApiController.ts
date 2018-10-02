@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-const BContract = require('../Contracts/BoolContract.ts');
+import BoolContract from '../Contracts/BoolContract';
 
 // base
 router.get('/', api);
 function api(req: any, res: any) {
-    res.json(new BContract(true));
+    res.json(new BoolContract(true));
 };
 
-module.exports = router;
+export = router;
