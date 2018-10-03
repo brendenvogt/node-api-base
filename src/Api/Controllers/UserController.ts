@@ -22,8 +22,12 @@ function getUser(req: any, res: any) {
         console.log(`getting ${user}`);
         if (err)
             res.send(err);
-        var newUser = new UserContract(user.username);
-        res.json(newUser);
+        if (user) {
+            var newUser = new UserContract(user.username);
+            res.json(newUser);
+        } else {
+            res.json(null);
+        }
     });
 };
 
