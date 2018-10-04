@@ -1,4 +1,5 @@
 # Starter NodeJS Backend Api
+This project also pairs with my sample ios client found here [**Base ios App**](https://github.com/brendenvogt/ios-base)
 ## Upcoming Features
 * JWT Authentication (JSON Web Token)
 * Integration Test Sample
