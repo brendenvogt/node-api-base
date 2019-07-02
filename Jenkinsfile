@@ -27,9 +27,14 @@ pipeline {
             echo 'Done'
           }
         }
-        stage('error') {
+        stage('Do other printing stuff') {
           steps {
             echo 'yay'
+          }
+        }
+        stage('email') {
+          steps {
+            emailext(subject: 'Cool Email', body: 'Hello', attachLog: true, from: 'bvogtdev@gmail.com', to: 'bvogtdev@gmail.com')
           }
         }
       }
