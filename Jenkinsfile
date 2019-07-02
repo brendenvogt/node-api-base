@@ -34,7 +34,7 @@ pipeline {
         }
         stage('email') {
           steps {
-            emailext(subject: 'Cool Email', body: 'Hello', attachLog: true, from: 'bvogtdev@gmail.com', to: 'bvogtdev@gmail.com')
+            emailext(subject: 'Cool Email', body: 'Hello', attachLog: true, from: 'brenden@mailinator.com', to: 'brenden@mailinator.com')
           }
         }
       }
